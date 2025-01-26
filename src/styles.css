@@ -64,6 +64,8 @@ header nav a:hover {
 .section {
   padding: 50px 20px;
   text-align: center;
+  display: block; /* Ensure the section is visible */
+  visibility: visible;
 }
 
 .section h2 {
