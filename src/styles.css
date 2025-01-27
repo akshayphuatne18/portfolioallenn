@@ -1,79 +1,73 @@
-/* Global Styles */
+/* General Styles */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(145deg, #1c1c1c, #2e2e2e);
-  color: #e5e5e5;
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  color: #f5f5f5;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  height: 100%;
 }
 
 h1, h2, h3, p, a {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Header Styles */
 header {
-  background: linear-gradient(120deg, #0d0d0d, #1a1a1a);
+  background: linear-gradient(120deg, #111, #1e1e1e);
   padding: 20px 50px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
   position: fixed;
   width: 100%;
   z-index: 1000;
-  top: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(255, 204, 0, 0.15);
-}
-
-header .header-left {
-  flex: 1;
+  justify-content: space-between;
 }
 
 header h1 {
-  font-size: 2rem;
-  color: #fff;
+  font-size: 2.5rem;
+  color: #ffcc00;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
 header nav {
-  flex: 2;
   display: flex;
-  justify-content: flex-end;
+  gap: 20px;
 }
 
 header nav a {
-  margin: 0 20px;
-  color: #a9a9a9;
-  text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  color: #e5e5e5;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 header nav a:hover {
   color: #ffcc00;
   text-shadow: 0px 4px 6px rgba(255, 204, 0, 0.8);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
+  transform: scale(1.1);
 }
 
+/* Profile Section */
 .profile-photo {
-  width: 120px; /* Reduced size */
-  height: 120px; /* Reduced size */
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: 4px solid #ffcc00;
+  border: 3px solid #ffcc00;
   box-shadow: 0px 8px 25px rgba(255, 204, 0, 0.7);
+  animation: pulse 4s infinite;
   position: absolute;
   top: 20px;
-  right: 20px;
-  animation: pulse 4s infinite;
+  right: 50px;
 }
 
 @keyframes pulse {
@@ -88,108 +82,86 @@ header nav a:hover {
 }
 
 /* Section Styles */
-.section {
-  padding: 100px 50px 80px;
-  text-align: center;
+section {
+  padding: 140px 50px 80px;
   position: relative;
-  background: #1c1c1c;
-  border-bottom: 2px solid #333;
-  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.section h2 {
-  font-size: 3rem;
+section h2 {
+  font-size: 2.5rem;
   margin-bottom: 20px;
   color: #ffcc00;
   text-shadow: 0 4px 10px rgba(255, 204, 0, 0.6);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.section p, .section ul {
-  max-width: 800px;
-  margin: auto;
-  font-size: 1.2rem;
-  line-height: 1.8;
+.section-block {
+  display: flex;
+  gap: 20px;
+  background: linear-gradient(145deg, #1f1f1f, #292929);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.section ul {
-  list-style: none;
-  padding: 0;
+.section-block:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(255, 204, 0, 0.7);
 }
 
-.section ul li {
-  background: rgba(255, 204, 0, 0.1);
-  margin: 15px 0;
+.section-title {
+  font-size: 1.8rem;
+  color: #ffcc00;
+  margin: 0;
+  flex: 1;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 3;
+}
+
+.card {
+  background: linear-gradient(145deg, #252525, #2e2e2e);
   padding: 15px;
   border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.section ul li:hover {
-  background: rgba(255, 204, 0, 0.2);
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* About Section Header */
-.about-header {
-  font-size: 3rem;
-  color: #ffcc00;
-  text-shadow: 0 4px 10px rgba(255, 204, 0, 0.6);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.card h3 {
+  font-size: 1.5rem;
   margin-bottom: 10px;
+  color: #fff;
 }
 
-.about-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #e5e5e5;
-}
-
-/* Interactive Buttons */
-button {
-  background: linear-gradient(90deg, #ffcc00, #d4af37);
-  color: #000;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 30px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
-  letter-spacing: 1px;
-}
-
-button:hover {
-  background: linear-gradient(90deg, #d4af37, #ffcc00);
-  box-shadow: 0 6px 20px rgba(255, 204, 0, 0.8);
-  transform: translateY(-3px);
+.card p {
+  font-size: 1rem;
+  color: #b5b5b5;
+  line-height: 1.6;
 }
 
 /* Footer Styles */
 footer {
-  background: #0d0d0d;
+  background: #111;
   color: #a9a9a9;
   text-align: center;
   padding: 50px 20px;
   position: relative;
-  border-top: 2px solid #333;
 }
 
 footer h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #ffcc00;
 }
 
 footer a {
   color: #ffcc00;
-  text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
 }
@@ -199,7 +171,7 @@ footer a:hover {
 }
 
 /* Background Effects */
-.section::before {
+section::before {
   content: '';
   position: absolute;
   top: -50px;
@@ -218,26 +190,4 @@ footer a:hover {
   50% {
     transform: translate(20px, 20px);
   }
-}
-
-/* Section Header Styles for All Sections (About, Education, Skills, Projects) */
-.about, .education, .skills, .projects, .certifcations, .achievements {
-  padding: 100px 50px;
-  background: #1c1c1c;
-  margin-bottom: 50px;
-}
-
-.about-header, .education-header, .skills-header, .projects-header,.certifcations-header, .achievements-header {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #ffcc00;
-  text-shadow: 0 4px 10px rgba(255, 204, 0, 0.6);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
 }
